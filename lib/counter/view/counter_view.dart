@@ -1,6 +1,8 @@
-import 'package:counter_app/counter/counter_cubit/counter_cubit.dart';
+import 'package:counter_app/counter/counter_bloc/counter_bloc.dart';
 import 'package:counter_app/counter/view/widgets/my_floating_action.dart';
+import 'package:counter_app/theme/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterView extends StatelessWidget {
@@ -8,7 +10,8 @@ class CounterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var counterCubit = context.read<CounterCubit>();
+    var counterBloc = context.read<CounterBloc>();
+    var themeBloc = context.read<ThemeBloc>();
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -16,20 +19,28 @@ class CounterView extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.purple.shade200,
+        actions: [
+          IconButton(
+            onPressed: () {
+              themeBloc.add(ThemeChangedEvent());
+            },
+            icon: BlocBuilder<ThemeBloc, ThemeState>(
+              builder: (context, state) {
+                return Icon(state.themeMode == ThemeMode.light
+                    ? Icons.brightness_5_rounded
+                    : Icons.brightness_4_rounded);
+              },
+            ),
+          ),
+        ],
       ),
       /*-------- The body using bloc listener and bloc builder ---------*/
-      // body: BlocListener<CounterCubit, int>(
+      // body: BlocListener<CounterBloc, int>(
       //   listener: (context, state) {
-      //     // Show a dialog when the counter reaches a negative value
+      //     // Show a snack bar when the counter reaches a negative value for example:
       //     if (state == -1) {
-      //       showDialog(
-      //         context: context,
-      //         builder: (context) {
-      //           return myAlertDialog(context);
-      //         },
-      //       );
+      //       ScaffoldMessenger.of(context).showSnackBar(
+      //           mySnackBar(message: 'Counter reaches a negative value.'));
       //     }
       //   },
       //   child: Center(
@@ -39,7 +50,7 @@ class CounterView extends StatelessWidget {
       //         const Text(
       //           'You have pushed the button this many times:',
       //         ),
-      //         BlocBuilder<CounterCubit, int>(
+      //         BlocBuilder<CounterBloc, int>(
       //           builder: (context, state) {
       //             return Text(
       //               '$state',
@@ -52,22 +63,22 @@ class CounterView extends StatelessWidget {
       //   ),
       // ),
       /*-------- The body using bloc consumer only ---------*/
-      body: BlocConsumer<CounterCubit, int>(
+      body: BlocConsumer<CounterBloc, int>(
         //-- listener of the bloc consumer --//
         listener: (context, state) {
-          // show a message whenever the counter reaches 10 or -10.
-          if (state == -10 || state == 10) {
-            if (state == 10) {
+          // show a message whenever the counter reaches 5 or -5 for example.
+          if (state == -5 || state == 5) {
+            if (state == 5) {
               ScaffoldMessenger.of(context).showSnackBar(
                 mySnackBar(
-                  message: 'The counter reaches 10.',
+                  message: 'The counter reaches 5.',
                 ),
               );
             }
-            if (state == -10) {
+            if (state == -5) {
               ScaffoldMessenger.of(context).showSnackBar(
                 mySnackBar(
-                  message: 'The counter reaches -10.',
+                  message: 'The counter reaches -5.',
                 ),
               );
             }
@@ -89,7 +100,7 @@ class CounterView extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: MyFloatingActionButton(counterCubit: counterCubit),
+      floatingActionButton: MyFloatingActionButton(counterBloc: counterBloc),
     );
   }
 }
@@ -108,19 +119,5 @@ SnackBar mySnackBar({required String message}) {
     elevation: 1.0,
     duration: Duration(milliseconds: 1500),
     backgroundColor: Colors.teal.shade300,
-  );
-}
-
-//-- Alert Dialog --//
-AlertDialog myAlertDialog(BuildContext context) {
-  return AlertDialog(
-    title: Text("Alert!"),
-    content: Text("Counter reaches a negative value."),
-    actions: [
-      TextButton(
-        onPressed: () => Navigator.of(context).pop(),
-        child: Text('Ok'),
-      ),
-    ],
   );
 }

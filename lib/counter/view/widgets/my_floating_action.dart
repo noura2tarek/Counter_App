@@ -1,13 +1,13 @@
+import 'package:counter_app/counter/counter_bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
-import '../../counter_cubit/counter_cubit.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
   const MyFloatingActionButton({
     super.key,
-    required this.counterCubit,
+    required this.counterBloc,
   });
 
-  final CounterCubit counterCubit;
+  final CounterBloc counterBloc;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,8 @@ class MyFloatingActionButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         FloatingActionButton(
-          onPressed: () => counterCubit.incrementCounter(),
+          // create an event of type CounterIncrementPressedEvent to update the state
+          onPressed: () => counterBloc.add(CounterIncrementPressedEvent()),
           tooltip: 'Increment',
           child: const Icon(Icons.add),
         ),
@@ -23,7 +24,8 @@ class MyFloatingActionButton extends StatelessWidget {
           height: 6.0,
         ),
         FloatingActionButton(
-          onPressed: () => counterCubit.decrementCounter(),
+          // create an event of type CounterDecrementPressedEvent to update the state
+          onPressed: () => counterBloc.add(CounterDecrementPressedEvent()),
           tooltip: 'Decrement',
           child: const Icon(Icons.remove),
         ),
