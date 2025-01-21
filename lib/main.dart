@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                     floatingActionButtonTheme: FloatingActionButtonThemeData(
                       backgroundColor: Colors.purple.shade200,
                       foregroundColor: Colors.white,
-                      elevation: 1.0,
+                      elevation: 2.0,
                     ),
                   )
                 : ThemeData.dark().copyWith(
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
                     floatingActionButtonTheme: FloatingActionButtonThemeData(
                       backgroundColor: Colors.purple.shade400,
                       foregroundColor: Colors.white,
-                      elevation: 1.0,
+                      elevation: 2.0,
                     ),
                   ),
             home: const CounterScreen(),
