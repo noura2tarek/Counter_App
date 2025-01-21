@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
                     ),
                     scaffoldBackgroundColor: Color(0xff121212),
                     appBarTheme: const AppBarTheme().copyWith(
-                      backgroundColor:Colors.purple.shade400,
+                      backgroundColor: Colors.purple.shade400,
                       foregroundColor: Colors.white,
                       elevation: 1.0,
                       systemOverlayStyle: SystemUiOverlayStyle.light,
