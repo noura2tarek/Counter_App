@@ -1,0 +1,34 @@
+# Counter_App
+
+# Description
+
+Simple counter app with counter text and two buttons increase & decrease.
+Manages the state using Counter Cubit and bloc consumer in counter view.
+
+The state type in int to observe the counter value.
+The counter cubit increases the state by 1 using incrementCounter method.
+And decreases the state by 1 using decrementCounter method.
+
+So, we have separated the presentation layer from the business logic layer.
+
+The structure of the app is:
+counter folder in lib: contains counter cubit and view folder.
+view folder: contains counter_view, counter_screen and widgets folder.
+widgets folder: contains my floating action button.
+
+I build the body using bloc consumer which listens to the counter value if reaches 10 or -10 and
+then a message is shown and
+rebuild the text widget in body according to the state using builder parameter.
+
+and another body in comment section which uses bloc listener which listens to the counter value if
+reaches a negative value and bloc builder to update the text widget in body.
+
+## Dependencies
+
+The following dependencies are needed to run this app:
+
+- flutter_bloc:
+
+# Screenshots
+
+The output screenshots in assets folder.
