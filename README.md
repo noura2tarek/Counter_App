@@ -3,15 +3,15 @@
 # Description
 
 Simple counter app with counter text and two buttons increase & decrease.
-Manages the state using Counter Cubit and and updates the UI using bloc consumer in counter view.
+Manages the state using Counter Cubit and updates the UI using bloc consumer in counter view.
 
-The state type in int to observe the counter value.
-The counter cubit increases the state by 1 using incrementCounter method.
-And decreases the state by 1 using decrementCounter method.
+The state type in int to observe the counter value.      
+The counter cubit increases the state by 1 using incrementCounter method.    
+And decreases the state by 1 using decrementCounter method.    
 
 So, we have separated the presentation layer from the business logic layer.
 
-The structure of the app is:
+The structure of the app is:             
 counter folder in lib: contains counter cubit and view folder.     
 view folder: contains counter_view, counter_screen and widgets folder.      
 widgets folder: contains my floating action button.    
