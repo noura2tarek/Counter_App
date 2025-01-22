@@ -19,15 +19,16 @@ widgets folder: contains my floating action button.
 I build the body using bloc consumer which listens to the counter value if reaches 10 or -10 and
 then a message is shown and
 rebuild the text widget in body according to the state using builder parameter.
-
-and another body in comment section which uses bloc listener which listens to the counter value if
-reaches a negative value and bloc builder to update the text widget in body.
+**
+And another body in the same scaffold /in comment section / which uses bloc listener which listens to the counter value if
+reaches a negative value and bloc builder to update the text widget in body. (to acheive 5,6 points in requirements)
+**
 
 ## Dependencies
 
 The following dependencies are needed to run this app:
 
-- flutter_bloc:
+- flutter_bloc  => https://pub.dev/packages/flutter_bloc
 
 # Screenshots
 
