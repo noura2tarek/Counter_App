@@ -2,7 +2,7 @@
 
 # Description
 
-Simple counter app with counter text and two buttons increase & decrease.
+Simple counter app with counter text and two buttons increase & decrease.             
 Manages the state using Counter Cubit and updates the UI using bloc consumer in counter view.
 
 The state type in int to observe the counter value.      
