@@ -22,7 +22,7 @@ widgets folder: contains my floating action button.
 theme folder in lib: contains theme bloc.    
 observers folder in lib: contains my_bloc_observer class to observe all state changes in the application.     
 ** 
-I build the body using bloc consumer which listens to the counter value if reaches 5 or -5 and
+I build the body of the counter view using bloc consumer which listens to the counter value if reaches 5 or -5 and
 then a message is shown and
 rebuild the text widget in body according to the state using builder parameter.       
 ** 
