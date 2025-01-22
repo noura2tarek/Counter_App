@@ -14,9 +14,9 @@ So, we have separated the presentation layer from the business logic layer.
 # App Structure
 
 The structure of the app is:             
-counter folder in lib: contains counter cubit and view folder.     
-view folder: contains counter_view, counter_screen and widgets folder.      
-widgets folder: contains my floating action button.    
+- counter folder in lib: contains counter cubit and view folder.     
+- view folder: contains counter_view, counter_screen and widgets folder.      
+- widgets folder: contains my floating action button.    
 
 I build the body of the counter view using bloc consumer which listens to the counter value if reaches 10 or -10 and
 then a message is shown and
