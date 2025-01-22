@@ -9,7 +9,9 @@ The state type in int to observe the counter value.
 The counter cubit increases the state by 1 using incrementCounter method.    
 And decreases the state by 1 using decrementCounter method.    
 
-So, we have separated the presentation layer from the business logic layer.
+So, we have separated the presentation layer from the business logic layer.         
+
+# App Structure
 
 The structure of the app is:             
 counter folder in lib: contains counter cubit and view folder.     
@@ -21,7 +23,7 @@ then a message is shown and
 rebuild the text widget in body according to the state using builder parameter.       
 **
 And another body in the same scaffold /in comment section / which uses bloc listener which listens to the counter value if
-reaches a negative value and bloc builder to update the text widget in body. (to acheive 5,6 points in requirements).      
+reaches a negative value and bloc builder to update the text widget in body. (to achieve 5,6 points in requirements).      
 **
 
 ## Dependencies
