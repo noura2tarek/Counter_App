@@ -27,8 +27,8 @@ class CounterView extends StatelessWidget {
             icon: BlocBuilder<ThemeBloc, ThemeState>(
               builder: (context, state) {
                 return Icon(state.themeMode == ThemeMode.light
-                    ? Icons.brightness_5_rounded
-                    : Icons.brightness_4_rounded);
+                    ? Icons.brightness_4_rounded
+                    : Icons.brightness_5_rounded);
               },
             ),
           ),
