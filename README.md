@@ -38,5 +38,5 @@ The output screenshots in assets folder.
 
 Note: 
 ------------------
-The 'create different Blocs' task in CounterBloc branch.
+The 'Create different Blocs' task in CounterBloc branch.
 
