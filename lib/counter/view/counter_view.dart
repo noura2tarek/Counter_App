@@ -2,7 +2,6 @@ import 'package:counter_app/counter/counter_bloc/counter_bloc.dart';
 import 'package:counter_app/counter/view/widgets/my_floating_action.dart';
 import 'package:counter_app/theme/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterView extends StatelessWidget {
