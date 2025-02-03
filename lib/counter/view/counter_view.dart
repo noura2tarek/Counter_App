@@ -101,7 +101,9 @@ class CounterView extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: MyFloatingActionButton(counterBloc: counterBloc),
+      floatingActionButton: MyFloatingActionButton(
+        counterBloc: counterBloc,
+      ),
     );
   }
 }

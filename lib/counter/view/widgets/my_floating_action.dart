@@ -14,6 +14,7 @@ class MyFloatingActionButton extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        //-- Add button //
         FloatingActionButton(
           // create an event of type CounterIncrementPressedEvent to update the state
           onPressed: () => counterBloc.add(CounterIncrementPressedEvent()),
@@ -23,6 +24,7 @@ class MyFloatingActionButton extends StatelessWidget {
         SizedBox(
           height: 6.0,
         ),
+        //-- Decrement button //
         FloatingActionButton(
           // create an event of type CounterDecrementPressedEvent to update the state
           onPressed: () => counterBloc.add(CounterDecrementPressedEvent()),

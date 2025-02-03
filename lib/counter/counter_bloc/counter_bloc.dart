@@ -9,15 +9,17 @@ class CounterBloc extends Bloc<CounterEvent, int> {
     on<CounterDecrementPressedEvent>(_counterDecrementPressed);
   }
 
-  // Handle counter increment event
+  //-- Handle counter increment event --//
   Future<void> _counterIncrementPressed(
       CounterIncrementPressedEvent event, emit) async {
+    // Increment the current state by 1
     emit(state + 1);
   }
 
-  // Handle counter decrement event
+  //-- Handle counter decrement event --//
   Future<void> _counterDecrementPressed(
       CounterDecrementPressedEvent event, emit) async {
+    // Decrement the current state by 1
     emit(state - 1);
   }
 }
