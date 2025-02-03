@@ -9,7 +9,6 @@ class CounterCubit extends Cubit<int> {
   }
 
   // Decrement the cubit current state by 1
-
   void decrementCounter() {
     emit(state - 1);
   }

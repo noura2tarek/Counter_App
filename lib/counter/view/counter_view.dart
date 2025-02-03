@@ -89,7 +89,9 @@ class CounterView extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: MyFloatingActionButton(counterCubit: counterCubit),
+      floatingActionButton: MyFloatingActionButton(
+        counterCubit: counterCubit,
+      ),
     );
   }
 }

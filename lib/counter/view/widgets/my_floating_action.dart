@@ -14,6 +14,7 @@ class MyFloatingActionButton extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        // Add button
         FloatingActionButton(
           onPressed: () => counterCubit.incrementCounter(),
           tooltip: 'Increment',
@@ -22,6 +23,7 @@ class MyFloatingActionButton extends StatelessWidget {
         SizedBox(
           height: 6.0,
         ),
+        // Decrement button
         FloatingActionButton(
           onPressed: () => counterCubit.decrementCounter(),
           tooltip: 'Decrement',
