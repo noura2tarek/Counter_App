@@ -10,12 +10,13 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   bool isDarkMode = false;
 
   ThemeBloc() : super(ThemeInitialState(ThemeMode.light)) {
-    on<ThemeEvent>((event, emit) {
-      if (event is ThemeChangedEvent) {
-        isDarkMode = !isDarkMode;
-        ThemeMode themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
-        emit(ThemeChangedState(themeMode));
-      }
-    });
+    on<ThemeChangedEvent>(_changeTheme);
+  }
+
+  // Handle change theme event to toggle theme between light and dark
+  Future<void> _changeTheme(ThemeChangedEvent event, emit) async {
+    isDarkMode = !isDarkMode;
+    ThemeMode themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+    emit(ThemeChangedState(themeMode));
   }
 }

@@ -9,7 +9,7 @@ class MyBlocObserver extends BlocObserver {
     log('${bloc.runtimeType} $change');
   }
 
-  // observe events
+  // Observe events
   @override
   void onEvent(Bloc bloc, Object? event) {
     super.onEvent(bloc, event);

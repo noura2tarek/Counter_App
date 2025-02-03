@@ -19,14 +19,16 @@ class CounterView extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
+          //-- Change theme icon button --//
           IconButton(
             onPressed: () {
+              //-- call change theme event //
               themeBloc.add(ThemeChangedEvent());
             },
             icon: BlocBuilder<ThemeBloc, ThemeState>(
               builder: (context, state) {
                 return Icon(state.themeMode == ThemeMode.light
-                    ? Icons.brightness_4_rounded
+                    ? Icons.brightness_2_outlined
                     : Icons.brightness_5_rounded);
               },
             ),

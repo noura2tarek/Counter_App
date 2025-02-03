@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Counter App',
             themeMode: state.themeMode,
+            // Light Theme
             theme: state.themeMode == ThemeMode.light
                 ? ThemeData.light().copyWith(
                     primaryColor: Colors.purple.shade200,
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
                       elevation: 2.0,
                     ),
                   )
+                // Dark theme
                 : ThemeData.dark().copyWith(
                     primaryColor: Colors.purple.shade400,
                     colorScheme: const ColorScheme.dark().copyWith(
