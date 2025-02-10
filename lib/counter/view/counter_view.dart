@@ -14,11 +14,7 @@ class CounterView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Counter',
-          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        centerTitle: true,
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.purple.shade200,
       ),
       /*-------- The body using bloc consumer ---------*/
       body: BlocConsumer<CounterCubit, int>(

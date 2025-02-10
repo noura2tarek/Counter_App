@@ -20,6 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.purple.shade200,
+          titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       home: const CounterScreen(),
     );
