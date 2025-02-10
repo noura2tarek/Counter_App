@@ -5,8 +5,9 @@ import 'package:counter_app/theme/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CounterView extends StatelessWidget {
-  const CounterView({super.key});
+//------------ The same Counter view but using bloc builder and listener -------------//
+class CounterView2 extends StatelessWidget {
+  const CounterView2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,39 +37,29 @@ class CounterView extends StatelessWidget {
           ),
         ],
       ),
-      /*-------- The body using bloc consumer only ---------*/
-      body: BlocConsumer<CounterBloc, int>(
-        //-- listener of the bloc consumer --//
+      /*-------- The body using bloc listener and bloc builder ---------*/
+      body: BlocListener<CounterBloc, int>(
         listener: (context, state) {
-          // show a message whenever the counter reaches 5 or -5 for example.
-          if (state == -5 || state == 5) {
-            if (state == 5) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                mySnackBar(
-                  message: 'The counter reaches 5.',
-                ),
-              );
-            }
-            if (state == -5) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                mySnackBar(
-                  message: 'The counter reaches -5.',
-                ),
-              );
-            }
+          // Show a snack bar when the counter reaches a negative value for example:
+          if (state == -1) {
+            ScaffoldMessenger.of(context).showSnackBar(
+                mySnackBar(message: 'Counter reaches a negative value.'));
           }
         },
-        //-- builder of the bloc consumer --//
-        builder: (context, state) => Center(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'You have pushed the button this times:',
+                'You have pushed the button this many times:',
               ),
-              Text(
-                '$state',
-                style: Theme.of(context).textTheme.headlineMedium,
+              BlocBuilder<CounterBloc, int>(
+                builder: (context, state) {
+                  return Text(
+                    '$state',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  );
+                },
               ),
             ],
           ),

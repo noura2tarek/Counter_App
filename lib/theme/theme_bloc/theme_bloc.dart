@@ -9,6 +9,9 @@ part 'theme_state.dart';
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   bool isDarkMode = false;
 
+  // Create one instance of the bloc
+  static ThemeBloc get(context) => ThemeBloc();
+
   ThemeBloc() : super(ThemeInitialState(ThemeMode.light)) {
     on<ThemeChangedEvent>(_changeTheme);
   }

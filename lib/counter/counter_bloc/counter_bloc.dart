@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 part 'counter_event.dart';
 
 class CounterBloc extends Bloc<CounterEvent, int> {
@@ -8,6 +7,9 @@ class CounterBloc extends Bloc<CounterEvent, int> {
     on<CounterIncrementPressedEvent>(_counterIncrementPressed);
     on<CounterDecrementPressedEvent>(_counterDecrementPressed);
   }
+
+  // Create one instance of the bloc
+  static CounterBloc get(context) => CounterBloc();
 
   //-- Handle counter increment event --//
   Future<void> _counterIncrementPressed(
