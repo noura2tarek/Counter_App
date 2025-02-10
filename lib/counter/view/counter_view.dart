@@ -20,7 +20,7 @@ class CounterView extends StatelessWidget {
         foregroundColor: Colors.white,
         backgroundColor: Colors.purple.shade200,
       ),
-      /*-------- The body using bloc consumer only ---------*/
+      /*-------- The body using bloc consumer ---------*/
       body: BlocConsumer<CounterCubit, int>(
         //-- listener of the bloc consumer --//
         listener: (context, state) {
