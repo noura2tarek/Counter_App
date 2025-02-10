@@ -18,11 +18,11 @@ The structure of the app is:
 - view folder: contains counter_view, counter_view2, counter_screen and widgets folder.      
 - widgets folder: contains my floating action button.    
 
-I build the body of the counter view using bloc consumer which listens to the counter value if reaches 10 or -10 and
+I build the body of **the counter view** using bloc consumer which listens to the counter value if reaches 10 or -10 and
 then a message is shown and
 rebuild the text widget in body according to the state using builder parameter.       
 **
-And the counter view2 body uses bloc listener which listens to the counter value if
+And **the counter view2** body uses bloc listener which listens to the counter value if
 reaches a negative value and bloc builder to update the text widget in body. (to achieve 5,6 points in requirements).      
 **
 
