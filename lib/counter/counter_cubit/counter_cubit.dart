@@ -4,7 +4,7 @@ class CounterCubit extends Cubit<int> {
   CounterCubit() : super(0);
 
   // Create one instance of the cubit
-  static CounterCubit get(context) => CounterCubit();
+  static CounterCubit get(context) => BlocProvider.of(context);
 
   // Increment the cubit current state by 1
   void incrementCounter() {
