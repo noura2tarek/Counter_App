@@ -26,6 +26,8 @@ And **the counter view2** body uses bloc listener which listens to the counter v
 reaches a negative value and bloc builder to update the text widget in body. (to achieve 5,6 points in requirements).      
 **
 
+------------------
+
 ## Dependencies
 
 The following dependencies are needed to run this app:
@@ -36,7 +38,9 @@ The following dependencies are needed to run this app:
 
 The output screenshots in assets folder.
 
-# Note: 
 ------------------
+
+# Note: 
+
 The **Create different Blocs task** in **CounterBloc branch**.
 
