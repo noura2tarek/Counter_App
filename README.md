@@ -36,7 +36,7 @@ The following dependencies are needed to run this app:
 
 The output screenshots in assets folder.
 
-Note: 
+# Note: 
 ------------------
-The 'Create different Blocs' task in CounterBloc branch.
+The **Create different Blocs task** in **CounterBloc branch**.
 
