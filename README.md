@@ -27,7 +27,13 @@ reaches a negative value and bloc builder to update the text widget in body. (to
 **
 
 ------------------
+## How to Run
 
+1. Clone the repository.
+2. Run `flutter pub get` to install dependencies.
+3. Run `flutter run` to start the app.
+   
+---------------------------------------
 ## Dependencies
 
 The following dependencies are needed to run this app:
