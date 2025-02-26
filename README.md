@@ -5,7 +5,7 @@
 Simple counter app with counter text and two buttons increase & decrease.             
 Manages the state using Counter Cubit and updates the UI using bloc consumer in counter view.
 
-The state type is int to observe the counter value.      
+The **state type** is **int** to observe the counter value.      
 The counter cubit increases the state by 1 using incrementCounter method.    
 And decreases the state by 1 using decrementCounter method.    
 
