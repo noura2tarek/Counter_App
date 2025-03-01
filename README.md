@@ -11,12 +11,17 @@ And decreases the state by 1 using decrementCounter method.
 
 So, we have separated the presentation layer from the business logic layer.         
 
+--------------------------------
+
 # App Structure
 
-The structure of the app is:             
-- **counter folder**: contains counter cubit and view folder.     
-- **view folder**: contains counter_view, counter_view2, counter_screen and widgets folder.      
-- **widgets folder**: contains my floating action button.    
+The structure of the app in lib folder is:             
+- **counter folder**: contains counter cubit and view folder.
+- **Observers folder**: contains a BlocObserver to observe all state changes in the application.                                  
+                                                                                                       
+**Counter folder contains**:                 
+   - **counter cubit folder**: to manage counter state.                  
+   - **view folder**: contains counter_view, counter_view2, counter_screen and widgets folder.                                                              
 
 I build the body of **the counter view** using bloc consumer which listens to the counter value if reaches 10 or -10 and
 then a message is shown and
