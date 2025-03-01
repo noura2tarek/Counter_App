@@ -22,9 +22,10 @@ The structure of the app is:
    - view folder: contains counter_view, counter_view2, counter_screen and widgets folder.         
    - widgets folder: contains my floating action button and my snack bar.    
 - theme folder in lib: contains theme bloc.    
-- observers folder in lib: contains my_bloc_observer class to observe all state changes in the application.     
+- observers folder in lib: contains my_bloc_observer class to observe all state changes in the application.
+                   
 ** 
-I build the body of **the counter_view** using **bloc consumer** which listens to the counter value if reaches 5 or -5 and
+The body of **the counter_view** uses **bloc consumer** which listens to the counter value if reaches 5 or -5 and
 then a message will be shown using snack bar and
 rebuild the text widget in body according to the state using builder parameter.       
 ** 
