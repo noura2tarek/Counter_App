@@ -18,9 +18,9 @@ So, we have separated the presentation layer from the business logic layer.
 
 # App Structure
 The structure of the app is:             
-- counter folder in lib: contains counter bloc and view folder.
-view folder: contains counter_view, counter_view2, counter_screen and widgets folder.         
-widgets folder: contains my floating action button and my snack bar.    
+- counter folder in lib: contains counter bloc and view folder.               
+   - view folder: contains counter_view, counter_view2, counter_screen and widgets folder.         
+   - widgets folder: contains my floating action button and my snack bar.    
 - theme folder in lib: contains theme bloc.    
 - observers folder in lib: contains my_bloc_observer class to observe all state changes in the application.     
 ** 
