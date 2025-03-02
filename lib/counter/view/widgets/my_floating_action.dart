@@ -15,23 +15,49 @@ class MyFloatingActionButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         //-- Add button //
-        FloatingActionButton(
-          // create an event of type CounterIncrementPressedEvent to update the state
+        MyFloatingButton(
           onPressed: () => counterBloc.add(CounterIncrementPressedEvent()),
           tooltip: 'Increment',
-          child: const Icon(Icons.add),
+          icon: Icons.add,
         ),
         SizedBox(
           height: 6.0,
         ),
         //-- Decrement button //
-        FloatingActionButton(
-          // create an event of type CounterDecrementPressedEvent to update the state
+        MyFloatingButton(
           onPressed: () => counterBloc.add(CounterDecrementPressedEvent()),
           tooltip: 'Decrement',
-          child: const Icon(Icons.remove),
+          icon: Icons.remove,
         ),
       ],
+    );
+  }
+}
+
+////////////////////////////////////////
+class MyFloatingButton extends StatelessWidget {
+  const MyFloatingButton({
+    super.key,
+    required this.tooltip,
+    required this.icon,
+    this.onPressed,
+  });
+
+  final String tooltip;
+  final IconData icon;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      foregroundColor:
+          Theme.of(context).floatingActionButtonTheme.foregroundColor,
+      backgroundColor:
+          Theme.of(context).floatingActionButtonTheme.backgroundColor,
+      // create an event of type CounterIncrementPressedEvent to update the state
+      onPressed: onPressed,
+      tooltip: tooltip,
+      child: Icon(icon),
     );
   }
 }

@@ -1,11 +1,11 @@
 import 'package:counter_app/counter/view/counter_screen.dart';
 import 'package:counter_app/observers/my_bloc_observer.dart';
-import 'package:counter_app/theme/theme_bloc/theme_bloc.dart';
+import 'package:counter_app/theme/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main()  {
   // Bloc observer instance
   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ThemeBloc(),
+      create: (context) {
+        final themeBloc = ThemeBloc();
+        themeBloc.add(InitEvent());
+        return themeBloc;
+      },
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
           return MaterialApp(
@@ -64,7 +68,7 @@ class MyApp extends StatelessWidget {
                       elevation: 2.0,
                     ),
                   ),
-            home: const CounterScreen(),
+            home: CounterScreen(),
           );
         },
       ),

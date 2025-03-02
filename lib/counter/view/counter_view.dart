@@ -1,9 +1,9 @@
 import 'package:counter_app/counter/counter_bloc/counter_bloc.dart';
 import 'package:counter_app/counter/view/widgets/my_floating_action.dart';
 import 'package:counter_app/counter/view/widgets/my_snack_bar.dart';
-import 'package:counter_app/theme/theme_bloc/theme_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../theme/theme_bloc.dart';
 
 class CounterView extends StatelessWidget {
   const CounterView({super.key});
@@ -13,10 +13,16 @@ class CounterView extends StatelessWidget {
     var counterBloc = CounterBloc.get(context);
     var themeBloc = ThemeBloc.get(context);
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
+        systemOverlayStyle: Theme.of(context).appBarTheme.systemOverlayStyle,
         title: Text(
           'Counter',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
         actions: [
@@ -24,13 +30,15 @@ class CounterView extends StatelessWidget {
           IconButton(
             onPressed: () {
               //-- call change theme event //
-              themeBloc.add(ThemeChangedEvent());
+              themeBloc.add(ToggleThemeEvent());
             },
             icon: BlocBuilder<ThemeBloc, ThemeState>(
               builder: (context, state) {
-                return Icon(state.themeMode == ThemeMode.light
-                    ? Icons.brightness_2_outlined
-                    : Icons.brightness_5_rounded);
+                return Icon(
+                  state.themeMode == ThemeMode.light
+                      ? Icons.brightness_2_outlined
+                      : Icons.brightness_5_rounded,
+                );
               },
             ),
           ),
