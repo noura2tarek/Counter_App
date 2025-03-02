@@ -2,7 +2,7 @@
 
 # Description
 
-Add a modified version of The counter app using the bloc pattern:
+This is a modified version of The counter app using the bloc pattern:
 
 Manages the state using Counter Bloc (Bloc, Events, State(int))
 and updates the UI using bloc consumer in counter view.
